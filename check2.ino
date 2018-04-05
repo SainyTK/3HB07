@@ -3,7 +3,6 @@ const int en_pin = 11;
 const int data_pin[] = {5,4,3,2};
 int analog_in = A0;
 int adcValue = 0;
-int newValue = 0;
 
 
 void write4bits(int value)
@@ -116,12 +115,5 @@ void loop()
   sendLCD(0x30+f, true);
   sendLCD(0x30+g, true);
 
-  while(1)
-  {
-    newValue = analogRead(analog_in);
-    if(adcValue != newValue)
-    {
-      break;
-    }
-  }
+ delay(100);
 }
